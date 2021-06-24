@@ -1,0 +1,2 @@
+.remote_storage filter=lfs diff=lfs merge=lfs -text
+.local_storage filter=lfs diff=lfs merge=lfs -text

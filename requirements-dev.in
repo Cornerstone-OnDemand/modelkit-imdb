@@ -1,0 +1,24 @@
+-c requirements.txt
+-r requirements.txt
+
+# vectorizer fitting
+scikit-learn
+
+# lint & tests
+black
+coverage
+pytest
+uvicorn
+fastapi
+black
+flake8
+isort
+nox
+mypy
+
+# docs
+mkdocs-material
+pymdown-extensions
+
+# pip
+pip-tools
