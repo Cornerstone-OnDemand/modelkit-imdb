@@ -1,5 +1,3 @@
-from typing import Optional
-
 import modelkit
 import pydantic
 import tensorflow as tf
@@ -7,7 +5,6 @@ import tensorflow as tf
 
 class MovieReviewItem(pydantic.BaseModel):
     text: str
-    rating: Optional[float] = None  # could be useful in the future ? but not mandatory
 
 
 class MovieSentimentItem(pydantic.BaseModel):
