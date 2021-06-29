@@ -8,8 +8,6 @@ scikit-learn
 black
 coverage
 pytest
-uvicorn
-fastapi
 black
 flake8
 isort

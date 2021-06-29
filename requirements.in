@@ -1,4 +1,4 @@
-modelkit
+modelkit[api]==0.0.12
 numpy
 tensorflow
 spacy
