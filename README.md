@@ -28,7 +28,7 @@ It also serves as a sandbox for any developer willing to try out modelkit in _re
 
 ## TL;DR
 
-You can skip these different sections, and jump to the result hosted on `Heroku` at https://modelkit-imdb.herokuapp.com/docs/.
+Jump to the result hosted on `Heroku` at https://modelkit-imdb.herokuapp.com/docs/.
 
 ## Installation
 
@@ -48,7 +48,7 @@ Once done, let's create a new python virtual environment and install the dev req
 pip install -r requirements-dev.txt
 ```
 
-## Describe CLI
+## Models listing
 
 Before going further, let's remind us of the models that are available in the `modelkit_imdb` package with the following CLI:
 
@@ -59,7 +59,7 @@ modelkit describe
 <img src=".github/resources/describe.gif" style="margin: 20px" />
 
 
-## Run tests
+## Tests
 
 Also, let's make sure everything works as intended by running some tests.
 ```
@@ -88,7 +88,7 @@ modellibrary_auto_test(
 
 For more info, head over to [Testing](https://clustree.github.io/modelkit/library/models/testing.html).
 
-## Local HTTP serving
+## HTTP serving
 
 The following CLI will start a single worker which will expose all the models found under the `modelkit_imdb` package leveraging [uvicorn](https://www.uvicorn.org/) and [FastAPI](https://fastapi.tiangolo.com/):
 
@@ -98,7 +98,7 @@ modelkit serve
 
 Voilà: the [uvicorn](https://www.uvicorn.org/) worker is now running at `http://localhost:8000`.
 
-Modelkit also offers out-of-the-box support for [gunicorn](https://docs.gunicorn.org/en/stable/):
+Modelkit also provides out-of-the-box support for [gunicorn](https://docs.gunicorn.org/en/stable/):
 ```bash
 gunicorn --workers 4 \
          --bind 0.0.0.0:8000 \
@@ -111,7 +111,7 @@ Check out the generated `SwaggerUI` at http://localhost:8000/docs to see all the
 
 <img src=".github/resources/swagger.gif" alt="modelkit swagger" style="margin: 20px">
 
-You can also `POST` your request on the endpoint of your choice:
+Of course, you can also `POST` your request on the endpoint of your choice:
 
 ```bash
 curl -X 'POST' \
@@ -131,7 +131,6 @@ To conclude this sample project, a minimal `Dockerfile` was written as well as a
 You can run it locally using [Docker](https://www.docker.com/) and enjoy the Swagger at: http://localhost:8000/docs:
 
 ```
-docker build -t modelkit-imdb .                                                                                                                                                                             16:51:07 
+docker build -t modelkit-imdb .
 docker run -p 8000:8000 -e PORT=8000 modelkit-imdb 
 ```
-
