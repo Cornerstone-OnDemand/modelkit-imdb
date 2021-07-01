@@ -26,6 +26,10 @@ This sample project aims at illustrating modelkit's powerful features, based on 
 
 It also serves as a sandbox for any developer willing to try out modelkit in _real conditions_, from the package organization to the Github CI and through the use of CLIs and HTTP serving.
 
+## TL;DR
+
+You can skip these different sections, and jump to the result hosted on `Heroku` at https://modelkit-imdb.herokuapp.com/docs/.
+
 ## Installation
 
 First, please `source .env` or run the following:
@@ -44,7 +48,7 @@ Once done, let's create a new python virtual environment and install the dev req
 pip install -r requirements-dev.txt
 ```
 
-## Describe
+## Describe CLI
 
 Before going further, let's remind us of the models that are available in the `modelkit_imdb` package with the following CLI:
 
@@ -54,15 +58,54 @@ modelkit describe
 
 <img src=".github/resources/describe.gif" style="margin: 20px" />
 
-## REST API serving
 
-The following CLI will start a single worker which will expose all the models found under the `modelkit_imdb` package leveraging `uvicorn` and `FastAPI`:
+## Run tests
+
+Also, let's make sure everything works as intended by running some tests.
+```
+pytest
+```
+
+As you can see in the `tests/`subfolder, two things were added:
+- in `conftest.py`: a pytest fixture `model_library` which creates a `ModelLibrary` with all the models found in the package
+```
+from modelkit.testing.fixtures import modellibrary_fixture
+
+modellibrary_fixture(
+    models=modelkit_imdb,
+    fixture_name="model_library",
+)
+```
+- in `test_auto_testing.py`: a test which iterates through all `modelkit_imdb` models to find tests and run them, using the just-defined `model_library` fixture:
+```python
+from modelkit.testing import modellibrary_auto_test
+
+modellibrary_auto_test(
+    models=modelkit_imdb,
+    fixture_name="model_library"
+)
+```
+
+For more info, head over to [Testing](https://clustree.github.io/modelkit/library/models/testing.html).
+
+## Local HTTP serving
+
+The following CLI will start a single worker which will expose all the models found under the `modelkit_imdb` package leveraging [uvicorn](https://www.uvicorn.org/) and [FastAPI](https://fastapi.tiangolo.com/):
 
 ```
 modelkit serve
 ```
 
-Voilà: the `uvicorn` worker is now running at `http://localhost:8000`.
+Voilà: the [uvicorn](https://www.uvicorn.org/) worker is now running at `http://localhost:8000`.
+
+Modelkit also offers out-of-the-box support for [gunicorn](https://docs.gunicorn.org/en/stable/):
+```bash
+gunicorn --workers 4 \
+         --bind 0.0.0.0:8000 \
+         --preload \
+         --worker-class=uvicorn.workers.UvicornWorker \
+         'modelkit.api:create_modelkit_app()'
+```
 
 Check out the generated `SwaggerUI` at http://localhost:8000/docs to see all the endpoints and try them out:
 
@@ -80,3 +123,8 @@ curl -X 'POST' \
 }'
 # {"label":"bad","score": 0.1530771553516388}
 ```
+
+## Deployment example
+
+To conclude this sample project, a minimal `Dockerfile` was written as well as a `heroku.yml` file so that to host our different models on `Heroku` at https://modelkit-imdb.herokuapp.com/docs/.
+
