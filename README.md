@@ -128,3 +128,10 @@ curl -X 'POST' \
 
 To conclude this sample project, a minimal `Dockerfile` was written as well as a `heroku.yml` file so that to host our different models on `Heroku` at https://modelkit-imdb.herokuapp.com/docs/.
 
+You can run it locally using [Docker](https://www.docker.com/) and enjoy the Swagger at: http://localhost:8000/docs:
+
+```
+docker build -t modelkit-imdb .                                                                                                                                                                             16:51:07 
+docker run -p 8000:8000 -e PORT=8000 modelkit-imdb 
+```
+
