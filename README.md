@@ -9,7 +9,7 @@
 <h3 align="center">leveraging <a href="https://github.com/clustree/modelkit">modelkit</a> and the IMDB reviews dataset</h3>
 
 <h4 align="center">
-  <em>Features Covered: Project Organization, CI, Assets Management, CLIs, REST API Serving</em>
+  <em>Features Covered: Project Organization, Assets Management, CLIs, REST API Serving</em>
 </h4>
 
 ---
@@ -48,11 +48,19 @@ Once done, let's create a new python virtual environment and install the dev req
 pip install -r requirements-dev.txt
 ```
 
+## Project Organization
+
+...
+
+## Assets Management
+
+...
+
 ## Models listing
 
 Before going further, let's remind us of the models that are available in the `modelkit_imdb` package with the following CLI:
 
-```
+```bash
 modelkit describe
 ```
 
@@ -62,13 +70,13 @@ modelkit describe
 ## Tests
 
 Also, let's make sure everything works as intended by running some tests.
-```
+```python
 pytest
 ```
 
 As you can see in the `tests/`subfolder, two things were added:
 - in `conftest.py`: a pytest fixture `model_library` which creates a `ModelLibrary` with all the models found in the package
-```
+```python
 from modelkit.testing.fixtures import modellibrary_fixture
 
 modellibrary_fixture(
@@ -92,7 +100,7 @@ For more info, head over to [Testing](https://clustree.github.io/modelkit/librar
 
 The following CLI will start a single worker which will expose all the models found under the `modelkit_imdb` package leveraging [uvicorn](https://www.uvicorn.org/) and [FastAPI](https://fastapi.tiangolo.com/):
 
-```
+```bash
 modelkit serve
 ```
 
@@ -130,7 +138,7 @@ To conclude this sample project, a minimal `Dockerfile` was written as well as a
 
 You can run it locally using [Docker](https://www.docker.com/) and enjoy the Swagger at: http://localhost:8000/docs:
 
-```
+```bash
 docker build -t modelkit-imdb .
 docker run -p 8000:8000 -e PORT=8000 modelkit-imdb 
 ```
