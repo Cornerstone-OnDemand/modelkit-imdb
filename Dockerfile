@@ -39,6 +39,9 @@ RUN python3 -m venv --copies ${HOME} && \
 
 ENV PATH=${PATH}:${HOME}/bin/
 
+# EXPOSE 8000
+# commented since not used by Heroku
+
 # using uvicorn
 CMD modelkit serve --host 0.0.0.0 --port ${PORT}
 # using gunicorn
