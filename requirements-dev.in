@@ -1,7 +1,6 @@
 -c requirements.txt
 -r requirements.txt
 
-# modelkit cli
 modelkit[cli]
 
 # vectorizer fitting

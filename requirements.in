@@ -1,4 +1,7 @@
-modelkit[api]==0.0.12
+modelkit
+fastapi
+uvicorn
+gunicorn
 numpy
 tensorflow
 spacy
