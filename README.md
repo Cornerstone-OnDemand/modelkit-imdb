@@ -167,6 +167,25 @@ class Classifier(modelkit.Model[MovieReviewItem, MovieSentimentItem]):
     }
 ```
 
+As you can see, they are *pinned* to a given version so that you can freely update them hurting production:
+
+```
+modelkit assets update tmp/classifier imdb/classifier
+
+# Current assets manager:
+#  - storage provider = `<LocalStorageDriver bucket=.>`
+#  - bucket = `.`
+#  - prefix = `.remote_storage`
+# Current asset: `imdb/classifier`
+#  - name = `imdb/classifier`
+#  - major version = `None`
+#  - minor version (ignored) = `None`
+# Found a total of 1 versions (1 major versions) for `imdb/classifier`
+#  - major `0` = 0.0
+# Push a new asset version `0.1` for `imdb/classifier`?
+# [y/N]: 
+```
+
 They are then retrieved and cached in `.local_storage` once called by at a model:
 
 ```python
@@ -177,6 +196,8 @@ classifier = lib.get("imdb_classifier")
 classifier.predict({"text": "I love this movie so much"})
 # MovieSentimentItem(label='good', score=0.6999041438102722)
 ```
+
+That's it, make sure to clean the `./tmp` folder before leaving!
 
 ## Tests
 
