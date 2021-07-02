@@ -5,10 +5,12 @@ SHELL ["/bin/bash", "-c"]
 ENV HOME=/opt/modelkit-imdb \
     USER=modelkit-imdb \
     MODELKIT_ASSETS_DIR=.local_storage \
-    MODELKIT_STORAGE_BUCKET=. \
-    MODELKIT_STORAGE_PREFIX=.remote_storage \
-    MODELKIT_STORAGE_PROVIDER=local \
     MODELKIT_DEFAULT_PACKAGE=modelkit_imdb
+    # the following are commented since not useful in this context:
+    # the assets are already present in .local_storage
+    # MODELKIT_STORAGE_BUCKET=. \
+    # MODELKIT_STORAGE_PREFIX=.remote_storage \
+    # MODELKIT_STORAGE_PROVIDER=local \
 
 RUN apt-get -qqy update && \
     apt-get -qqy dist-upgrade && \
