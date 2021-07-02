@@ -28,7 +28,6 @@ asgiref==3.3.4
     #   -c requirements.txt
     #   -r requirements.txt
     #   modelkit
-    #   uvicorn
 astunparse==1.6.3
     # via
     #   -c requirements.txt
@@ -107,7 +106,6 @@ click==7.1.2
     #   modelkit
     #   pip-tools
     #   typer
-    #   uvicorn
 colorama==0.4.4
     # via
     #   -c requirements.txt
@@ -129,14 +127,17 @@ cymem==2.0.5
     #   preshed
     #   spacy
     #   thinc
+decorator==4.4.2
+    # via
+    #   -c requirements.txt
+    #   -r requirements.txt
+    #   networkx
 distlib==0.3.2
     # via virtualenv
 https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.0.0/en_core_web_sm-3.0.0.tar.gz
     # via
     #   -c requirements.txt
     #   -r requirements.txt
-fastapi==0.65.2
-    # via -r requirements-dev.in
 filelock==3.0.12
     # via
     #   -c requirements.txt
@@ -212,8 +213,6 @@ grpcio==1.34.1
     #   -r requirements.txt
     #   tensorboard
     #   tensorflow
-h11==0.12.0
-    # via uvicorn
 h5py==3.1.0
     # via
     #   -c requirements.txt
@@ -286,6 +285,11 @@ markupsafe==2.0.1
     #   jinja2
 mccabe==0.6.1
     # via flake8
+memory-profiler==0.58.0
+    # via
+    #   -c requirements.txt
+    #   -r requirements.txt
+    #   modelkit
 mergedeep==1.3.4
     # via mkdocs
 mkdocs==1.2.1
@@ -296,9 +300,10 @@ mkdocs-material==7.1.8
     #   mkdocs-material-extensions
 mkdocs-material-extensions==1.0.1
     # via mkdocs-material
-modelkit==0.0.11
+modelkit[cli]==0.0.12
     # via
     #   -c requirements.txt
+    #   -r requirements-dev.in
     #   -r requirements.txt
 multidict==5.1.0
     # via
@@ -319,6 +324,11 @@ mypy-extensions==0.4.3
     # via
     #   black
     #   mypy
+networkx==2.5.1
+    # via
+    #   -c requirements.txt
+    #   -r requirements.txt
+    #   modelkit
 nox==2021.6.12
     # via -r requirements-dev.in
 numpy==1.19.5
@@ -382,6 +392,11 @@ protobuf==3.17.3
     #   googleapis-common-protos
     #   tensorboard
     #   tensorflow
+psutil==5.8.0
+    # via
+    #   -c requirements.txt
+    #   -r requirements.txt
+    #   memory-profiler
 py==1.10.0
     # via
     #   nox
@@ -408,7 +423,6 @@ pydantic==1.7.4
     # via
     #   -c requirements.txt
     #   -r requirements.txt
-    #   fastapi
     #   modelkit
     #   spacy
     #   thinc
@@ -535,8 +549,6 @@ srsly==2.4.1
     #   -r requirements.txt
     #   spacy
     #   thinc
-starlette==0.14.2
-    # via fastapi
 structlog==21.1.0
     # via
     #   -c requirements.txt
@@ -621,7 +633,6 @@ typing-extensions==3.7.4.3
     #   structlog
     #   tensorflow
     #   thinc
-    #   uvicorn
     #   yarl
 urllib3==1.26.5
     # via
@@ -629,8 +640,6 @@ urllib3==1.26.5
     #   -r requirements.txt
     #   botocore
     #   requests
-uvicorn==0.14.0
-    # via -r requirements-dev.in
 virtualenv==20.4.7
     # via nox
 wasabi==0.8.2
