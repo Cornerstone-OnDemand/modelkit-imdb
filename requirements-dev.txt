@@ -141,6 +141,7 @@ fastapi==0.65.2
     # via
     #   -c requirements.txt
     #   -r requirements.txt
+    #   modelkit
 filelock==3.0.12
     # via
     #   -c requirements.txt
@@ -309,7 +310,7 @@ mkdocs-material==7.1.8
     #   mkdocs-material-extensions
 mkdocs-material-extensions==1.0.1
     # via mkdocs-material
-modelkit==0.0.12
+modelkit==0.0.13
     # via
     #   -c requirements.txt
     #   -r requirements-dev.in
@@ -614,7 +615,6 @@ tqdm==4.61.1
     # via
     #   -c requirements.txt
     #   -r requirements.txt
-    #   modelkit
     #   spacy
 typed-ast==1.4.3
     # via
@@ -654,6 +654,7 @@ uvicorn==0.14.0
     # via
     #   -c requirements.txt
     #   -r requirements.txt
+    #   modelkit
 virtualenv==20.4.7
     # via nox
 wasabi==0.8.2

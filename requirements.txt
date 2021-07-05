@@ -130,7 +130,7 @@ markdown==3.3.4
     # via tensorboard
 markupsafe==2.0.1
     # via jinja2
-modelkit==0.0.12
+modelkit==0.0.13
     # via -r requirements.in
 multidict==5.1.0
     # via
@@ -266,9 +266,7 @@ termcolor==1.1.0
 thinc==8.0.6
     # via spacy
 tqdm==4.61.1
-    # via
-    #   modelkit
-    #   spacy
+    # via spacy
 typer==0.3.2
     # via
     #   pathy
