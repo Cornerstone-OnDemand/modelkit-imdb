@@ -4,5 +4,5 @@ import modelkit_imdb
 
 modellibrary_fixture(
     models=modelkit_imdb,
-    fixture_name="model_library_auto_tests",
+    fixture_name="model_library",
 )

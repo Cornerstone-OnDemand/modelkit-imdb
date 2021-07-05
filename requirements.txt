@@ -13,7 +13,9 @@ absl-py==0.13.0
 aiohttp==3.7.4.post0
     # via modelkit
 asgiref==3.3.4
-    # via modelkit
+    # via
+    #   modelkit
+    #   uvicorn
 astunparse==1.6.3
     # via tensorflow
 async-timeout==3.0.1
@@ -53,6 +55,7 @@ click==7.1.2
     # via
     #   modelkit
     #   typer
+    #   uvicorn
 colorama==0.4.4
     # via rich
 commonmark==0.9.1
@@ -63,6 +66,8 @@ cymem==2.0.5
     #   spacy
     #   thinc
 https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.0.0/en_core_web_sm-3.0.0.tar.gz
+    # via -r requirements.in
+fastapi==0.65.2
     # via -r requirements.in
 filelock==3.0.12
     # via modelkit
@@ -97,6 +102,10 @@ grpcio==1.34.1
     # via
     #   tensorboard
     #   tensorflow
+gunicorn==20.1.0
+    # via -r requirements.in
+h11==0.12.0
+    # via uvicorn
 h5py==3.1.0
     # via tensorflow
 humanize==3.9.0
@@ -121,7 +130,7 @@ markdown==3.3.4
     # via tensorboard
 markupsafe==2.0.1
     # via jinja2
-modelkit==0.0.11
+modelkit==0.0.12
     # via -r requirements.in
 multidict==5.1.0
     # via
@@ -174,6 +183,7 @@ pycparser==2.20
     # via cffi
 pydantic==1.7.4
     # via
+    #   fastapi
     #   modelkit
     #   spacy
     #   thinc
@@ -235,6 +245,8 @@ srsly==2.4.1
     # via
     #   spacy
     #   thinc
+starlette==0.14.2
+    # via fastapi
 structlog==21.1.0
     # via modelkit
 tenacity==7.0.0
@@ -273,11 +285,14 @@ typing-extensions==3.7.4.3
     #   structlog
     #   tensorflow
     #   thinc
+    #   uvicorn
     #   yarl
 urllib3==1.26.5
     # via
     #   botocore
     #   requests
+uvicorn==0.14.0
+    # via -r requirements.in
 wasabi==0.8.2
     # via
     #   spacy

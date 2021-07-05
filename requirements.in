@@ -1,4 +1,7 @@
 modelkit
+fastapi
+uvicorn
+gunicorn
 numpy
 tensorflow
 spacy

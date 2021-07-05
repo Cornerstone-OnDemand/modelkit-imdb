@@ -1,6 +1,8 @@
 -c requirements.txt
 -r requirements.txt
 
+modelkit[cli]
+
 # vectorizer fitting
 scikit-learn
 
@@ -8,8 +10,6 @@ scikit-learn
 black
 coverage
 pytest
-uvicorn
-fastapi
 black
 flake8
 isort
