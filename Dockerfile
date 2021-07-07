@@ -22,7 +22,7 @@ RUN groupadd -r ${USER} && \
     useradd -g ${USER} -M -r -d ${HOME} ${USER}
 
 ADD modelkit_imdb ${HOME}/modelkit_imdb
-ADD .remote_storage ${HOME}/.remote_storage
+ADD .local_storage ${HOME}/.local_storage
 ADD requirements.txt ${HOME}
 
 RUN mkdir -p ${HOME}/.local_storage && \
