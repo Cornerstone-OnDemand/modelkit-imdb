@@ -130,7 +130,7 @@ markdown==3.3.4
     # via tensorboard
 markupsafe==2.0.1
     # via jinja2
-modelkit==0.0.13
+modelkit==0.0.14
     # via -r requirements.in
 multidict==5.1.0
     # via

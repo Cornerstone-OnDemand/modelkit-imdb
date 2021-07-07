@@ -1,4 +1,4 @@
-modelkit>=0.0.13
+modelkit>=0.0.14
 fastapi
 uvicorn
 gunicorn
